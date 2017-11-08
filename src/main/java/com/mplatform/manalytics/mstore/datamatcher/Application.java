@@ -4,7 +4,6 @@ package com.mplatform.manalytics.mstore.datamatcher;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.kafka.annotation.KafkaListener;
-
 import com.mplatform.manalytics.mstore.datamatcher.entities.KafkaResponse;
 
 @SpringBootApplication
@@ -14,7 +13,8 @@ public class Application {
   }
   
   @KafkaListener(topics = "${kafka.topic}")
-  public void listen(KafkaResponse message) {
+  public void listen(KafkaResponse message) throws Exception {
+      ProducerMain.SendRetryExchange("{\"mockupapiresponse\":25} ");
       System.out.println("Received Messasge in group foo: " + message.getDataCategory());
   }
   

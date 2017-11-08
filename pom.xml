@@ -25,6 +25,12 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>4.2.0</version>
+        </dependency>
+    
     <!-- spring-kafka -->
     <dependency>
       <groupId>org.springframework.kafka</groupId>
